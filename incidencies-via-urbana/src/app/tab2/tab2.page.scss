@@ -3,3 +3,11 @@ capacitor-google-map {
     width: 100%;
     height: 99.5%;
   }
+
+  ion-content {
+    --background: none;
+  }
+  
+  body {
+    background: transparent;
+  }
