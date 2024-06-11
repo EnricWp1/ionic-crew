@@ -17,7 +17,9 @@ export class Tab2Page {
   constructor(public markersService: MarkersService) {}
 
   ionViewDidEnter() {
-    this.createMap();
+    if(this.newMap === undefined){
+      this.createMap();
+    }
   }
 
   async createMap() {
@@ -44,7 +46,7 @@ export class Tab2Page {
       this.newMap.enableAccessibilityElements(true);
       this.newMap.enableIndoorMaps(true);
       this.newMap.enableTrafficLayer(false);
-
+      
       this.newMap.addMarkers(this.markersService.getNearMarkers(coordinates.coords.latitude, coordinates.coords.longitude));
     }
   }
